@@ -1,6 +1,7 @@
 import type { PipelineStatus, SearchReport } from "./types";
 
-const API = "/api";
+// Fall back to localhost only if the environment variable isn't set
+const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export async function fetchSuggestions(q: string): Promise<string[]> {
   const res = await fetch(`${API}/suggestions?q=${encodeURIComponent(q)}`);
