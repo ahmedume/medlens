@@ -9,7 +9,7 @@ from backend.app.config import get_settings
 settings = get_settings()
 settings.ensure_dirs()
 
-app = FastAPI(title="MedLens API")
+app = FastAPI(title="MediTrust API")
 
 ALLOWED_ORIGINS = [
     "http://localhost:5173",
@@ -18,7 +18,7 @@ ALLOWED_ORIGINS = [
     "http://127.0.0.1:5174",
     os.environ.get(
         "FRONTEND_URL",
-        "https://medlens-99z5cu8q6-ahmedumes-projects.vercel.app",
+        "https://meditrust-99z5cu8q6-ahmedumes-projects.vercel.app",
     ),
 ]
 

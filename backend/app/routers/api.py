@@ -27,7 +27,7 @@ router = APIRouter(prefix="/api")
 
 @router.get("/health")
 async def health():
-    return {"status": "ok", "service": "medlens"}
+    return {"status": "ok", "service": "meditrust"}
 
 
 @router.get("/suggestions", response_model=SuggestionsResponse)
@@ -97,5 +97,5 @@ async def download_report(report_id: str):
     return FileResponse(
         path,
         media_type="application/pdf",
-        filename=f"medlens-{report_id[:8]}.pdf",
+        filename=f"meditrust-{report_id[:8]}.pdf",
     )

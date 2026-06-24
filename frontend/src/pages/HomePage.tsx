@@ -38,7 +38,7 @@ export default function HomePage() {
             Medical literature review
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            MedLens
+            MediTrust
           </h1>
           <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-400 sm:text-lg lg:text-xl">
             Search PubMed, score evidence quality, and download structured trust reports for your research question.

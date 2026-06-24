@@ -1,5 +1,5 @@
 [project]
-name = "medlens"
+name = "meditrust"
 version = "0.1.0"
 description = "Medical literature intelligence platform"
 readme = "README.md"
@@ -17,4 +17,4 @@ dependencies = [
 ]
 
 [project.scripts]
-medlens = "backend.app.main:run"
+meditrust = "backend.app.main:run"

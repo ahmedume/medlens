@@ -1,6 +1,6 @@
-# MedLens
+# MediTrust
 
-MedLens is a full-stack medical literature review platform that converts clinical research questions into structured evidence reports. It retrieves PubMed articles, evaluates evidence quality with transparent scoring, summarizes consensus and contradictions, and exports PDF summaries.
+MediTrust is a full-stack medical literature review platform that converts clinical research questions into structured evidence reports. It retrieves PubMed articles, evaluates evidence quality with transparent scoring, summarizes consensus and contradictions, and exports PDF summaries.
 
 ## Features
 
@@ -66,7 +66,7 @@ REPORTS_DIR=data/reports
 PDF_DIR=data/pdfs
 ```
 
-The `GROQ_API_KEY` is optional. Without it, MedLens uses PubMed retrieval with deterministic scoring and local fallbacks. With a key, Groq enriches topic summaries, bias notes, and contradiction detection.
+The `GROQ_API_KEY` is optional. Without it, MediTrust uses PubMed retrieval with deterministic scoring and local fallbacks. With a key, Groq enriches topic summaries, bias notes, and contradiction detection.
 
 ## Notes
 
@@ -76,4 +76,4 @@ The `GROQ_API_KEY` is optional. Without it, MedLens uses PubMed retrieval with d
 
 ## Disclaimer
 
-MedLens is intended for research review and literature summarization. It is not medical advice and should not be used as a substitute for professional clinical judgment.
+MediTrust is intended for research review and literature summarization. It is not medical advice and should not be used as a substitute for professional clinical judgment.

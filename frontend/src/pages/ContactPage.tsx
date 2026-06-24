@@ -9,18 +9,18 @@ export default function ContactPage() {
         <div>
           <h1 className="mb-3 text-4xl font-bold text-white sm:text-5xl lg:text-5xl">Contact</h1>
           <p className="max-w-3xl text-base leading-relaxed text-slate-400 sm:text-lg lg:text-lg">
-            Questions about MedLens, partnership inquiries, or product feedback.
+            Questions about MediTrust, partnership inquiries, or product feedback.
           </p>
         </div>
         <div className="space-y-6 rounded-2xl p-5 sm:p-8 lg:rounded-3xl lg:p-8 glass">
           <div className="grid gap-3 text-base text-slate-400 sm:grid-cols-2 lg:text-base">
             <p>
-              Email: <span className="text-white">team@medlens.app</span>
+              Email: <span className="text-white">team@meditrust.app</span>
             </p>
             <p>
               GitHub:{" "}
               <a href="https://github.com" className="text-accent-soft hover:underline">
-                github.com/medlens
+                github.com/meditrust
               </a>
             </p>
           </div>

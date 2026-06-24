@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-accent/30 bg-accent/20 text-xs text-accent-soft sm:h-8 sm:w-8 sm:text-sm lg:h-9 lg:w-9 lg:text-sm">
               ML
             </span>
-            MedLens
+            MediTrust
           </Link>
           <nav className="flex w-full min-w-0 items-center justify-between gap-1 text-center text-sm text-slate-400 sm:w-auto sm:justify-end sm:gap-x-6 sm:text-left lg:gap-x-8 lg:text-base">
             {links.map((l) => (
@@ -48,7 +48,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </motion.main>
       <footer className="border-t border-white/5 py-8 text-center text-sm text-slate-500">
-        MedLens is for research review only. Not medical advice.
+        MediTrust is for research review only. Not medical advice.
       </footer>
     </div>
   );

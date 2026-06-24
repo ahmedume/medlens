@@ -24,7 +24,7 @@ def generate_pdf_report(report: SearchReport) -> str:
     doc = SimpleDocTemplate(str(path), pagesize=letter)
     story: list = []
 
-    story.append(Paragraph("MedLens Trust Report", styles["Heading1"]))
+    story.append(Paragraph("MediTrust Trust Report", styles["Heading1"]))
     story.append(Paragraph(_safe(f"Query: {report.query}"), styles["Normal"]))
     story.append(Paragraph(_safe(f"Verdict: {report.verdict.value}"), styles["Normal"]))
     story.append(Spacer(1, 12))
