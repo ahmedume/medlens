@@ -7,3 +7,5 @@ langchain-groq>=1.1.2
 python-dotenv>=1.2.2
 beautifulsoup4>=4.12.0
 fpdf2>=2.8.0
+pydantic-settings>=2.6.0
+reportlab>=4.2.0

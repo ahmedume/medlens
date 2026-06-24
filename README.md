@@ -22,7 +22,7 @@ MedLens is a full-stack medical literature review platform that converts clinica
 
 ### Prerequisites
 
-- Python 3.14+
+- Python 3.11+
 - Node.js 18+
 - uv
 
