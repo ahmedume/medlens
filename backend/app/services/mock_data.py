@@ -57,6 +57,7 @@ def build_mock_report(report_id: str, query: str) -> SearchReport:
             "RCT and systematic review data support moderate confidence; observational data adds context "
             "with more uncertainty. This is research synthesis, not medical advice."
         ),
+        topic_summary="",
         articles=articles,
         trust_breakdown=TrustBreakdown(
             evidence_quality=78.0,

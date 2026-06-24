@@ -5,6 +5,7 @@ import LoadingState from "../components/LoadingState";
 import PDFDownloadButton from "../components/PDFDownloadButton";
 import ResultsTable from "../components/ResultsTable";
 import SummaryCard from "../components/SummaryCard";
+import SearchSummary from "../components/SearchSummary";
 import TrustBreakdownChart from "../components/TrustBreakdownChart";
 import type { PipelineStatus, SearchReport } from "../types";
 
@@ -62,6 +63,7 @@ export default function ResultsPage() {
         <PDFDownloadButton reportId={report.id} />
       </div>
       <SummaryCard verdict={report.verdict} summary={report.summary} query={report.query || query} />
+      <SearchSummary report={report} />
       <div className="grid min-w-0 grid-cols-1 gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)]">
         <div className="min-w-0">
           <h2 className="text-lg font-medium mb-4">Evidence Table</h2>

@@ -40,6 +40,7 @@ export interface SearchReport {
   query: string;
   verdict: Verdict;
   summary: string;
+  topic_summary: string;
   articles: EvaluatedArticle[];
   trust_breakdown: TrustBreakdown;
   contradictions: ContradictionCluster[];

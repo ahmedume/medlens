@@ -7,6 +7,7 @@ MedLens is a full-stack medical literature review platform that converts clinica
 - Search PubMed using NCBI E-utilities
 - Expand clinical queries for broader literature retrieval
 - Score article quality by study design, source credibility, sample size, and recency
+- Plain-language topic explanations powered by Groq
 - Identify consensus, contradictions, and uncertainty across abstracts
 - Generate downloadable PDF evidence reports
 - Responsive React dashboard with search, pipeline status, results review, and downloads
@@ -16,7 +17,7 @@ MedLens is a full-stack medical literature review platform that converts clinica
 - Backend: Python, FastAPI, Pydantic, httpx, ReportLab
 - Frontend: React, TypeScript, Vite, Tailwind CSS
 - Data: PubMed / NCBI E-utilities
-- Optional provider: Groq via LangChain
+- Optional LLM: Groq via LangChain
 
 ## Getting Started
 
@@ -24,17 +25,20 @@ MedLens is a full-stack medical literature review platform that converts clinica
 
 - Python 3.11+
 - Node.js 18+
-- uv
 
 ### Backend
 
 ```powershell
-git clone https://github.com/YOUR_USERNAME/medlens.git
 cd medlens
-uv sync
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
 copy .env.example .env
-uv run uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
+# Edit .env and add your GROQ_API_KEY (optional)
+uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
 ```
+
+Or run `start_backend.bat`.
 
 ### Frontend
 
@@ -62,13 +66,13 @@ REPORTS_DIR=data/reports
 PDF_DIR=data/pdfs
 ```
 
-The `GROQ_API_KEY` is optional. MedLens can run with PubMed retrieval and deterministic scoring even without an API key.
+The `GROQ_API_KEY` is optional. Without it, MedLens uses PubMed retrieval with deterministic scoring and local fallbacks. With a key, Groq enriches topic summaries, bias notes, and contradiction detection.
 
 ## Notes
 
 - Do not commit `.env`, generated reports, virtual environments, or dependency folders.
 - The backend exposes OpenAPI docs at `/docs`.
-- The frontend serves from Vite and communicates with the backend API.
+- The frontend serves from Vite and communicates with the backend via the `/api` proxy.
 
 ## Disclaimer
 

@@ -62,6 +62,7 @@ class SearchReport(BaseModel):
     query: str
     verdict: Verdict
     summary: str
+    topic_summary: str = ""
     articles: list[EvaluatedArticle]
     trust_breakdown: TrustBreakdown
     contradictions: list[ContradictionCluster]

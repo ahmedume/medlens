@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser, StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from backend.app.agents.llm import get_llm
 from pydantic import BaseModel, Field
@@ -84,6 +84,19 @@ async def run_structuring_agent(
         f"Average trust score {int(sum(a.trust_score for a in articles) / max(len(articles), 1))}. "
         "Not medical advice. Consult a clinician."
     )
+
+    topic_summary = ""
+    try:
+        llm = get_llm()
+        topic_prompt = ChatPromptTemplate.from_messages([
+            ("system", "Explain what this medical topic is in 2-3 plain sentences. Assume no prior knowledge. Be concise."),
+            ("human", "{query}"),
+        ])
+        topic_chain = topic_prompt | llm | StrOutputParser()
+        topic_summary = await topic_chain.ainvoke({"query": query})
+    except (ValueError, TimeoutError):
+        topic_summary = ""
+
     contradictions: list[ContradictionCluster] = []
 
     try:
@@ -119,6 +132,7 @@ async def run_structuring_agent(
         query=query,
         verdict=verdict,
         summary=summary,
+        topic_summary=topic_summary,
         articles=articles,
         trust_breakdown=breakdown,
         contradictions=contradictions,
