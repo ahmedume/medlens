@@ -29,7 +29,7 @@ MediTrust is a full-stack medical literature review platform that converts clini
 ### Backend
 
 ```powershell
-cd medlens
+cd meditrust
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
