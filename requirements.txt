@@ -9,3 +9,5 @@ beautifulsoup4>=4.12.0
 fpdf2>=2.8.0
 pydantic-settings>=2.6.0
 reportlab>=4.2.0
+langchain-core>=0.3.0
+langchain>=1.2.15
